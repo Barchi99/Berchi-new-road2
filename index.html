@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" name="viewport"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<link href="./resources/ol.css" rel="stylesheet"/>
+<link href="resources/fontawesome-all.min.css" rel="stylesheet"/>
+<link href="resources/photon-geocoder-autocomplete.min.css" rel="stylesheet"/>
+<link href="./resources/ol-layerswitcher.css" rel="stylesheet"/>
+<link href="./resources/qgis2web.css" rel="stylesheet"/>
+<style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control > * {
+            background-color: #f8f8f8!important;
+            color: #444444!important;
+            border-radius: 0px;
+        }
+        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
+            color: #444444!important;
+        }
+        .search-layer-input-search {
+            background-color: #f8f8f8!important;
+        }
+        .ol-control > *:focus, .ol-control >*:hover {
+            background-color: rgba(248, 248, 248, 0.7)!important;
+        } 
+        .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 2px !important;
+        } 
+        </style>
+<style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+<title></title>
+</head>
+<body>
+<div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); color: white; display: flex; justify-content: center;
+    align-items: center; flex-direction: column; z-index: 9999; font-family: Tahoma; text-align: center; direction: rtl;">
+<h2 style="font-weight: bold; font-size: 24px;">⚠️ هشدار!</h2>
+<p>همشهریان عزیز!</p>
+<p>در این پلان اصلاحی شبکات سرک های کابل ، مسیرهای اصلی شبکه‌های سرک‌های شهر کابل مشخص گردیده است، اما قابل تذکر است که خطوط دقت لازم را نداشته و به دلایل ذیل ورود تغییرات در وقت تطبیق عملاً آن در ساحه محتمل خواهد بود:</p>
+<p>تصویر که ملاحظه مینمایید، تصویر فضایی بوده و از فضا گرفته شده است، بنابراین خطوط نشان داده شده بالای تصاویر فضایی به دلیل زوایای تصاویر، در بسیار ساحات متفاوت و مغایر معلوم می‌شود.</p>
+<p>این امکان وجود دارد که مسیرهای شبکه سرک نشان داده شده در تصویر به دلیل برخورد با مساجد شریف و یا ابدات تاریخی، تغییر نماید.</p>
+<p>توجه نمایید که مسیر نهایی سرک‌ها بعد از سروی توپگرافی، دیزاین و سروی املاکی مشخص گردیده و نیز میزان استملاک ساحه نظر به مسیر تعیین شده در پلان املاکی مشخص خواهد گردید.</p>
+<button onclick="document.getElementById('overlay').style.display='none'; document.getElementById('map').style.display='block';" style="padding: 10px 20px; font-size: 16px; margin-top: 20px; cursor: pointer;">ادامه</button>
+</div>
+
+<div id="map">
+<div class="ol-popup" id="popup">
+<a class="ol-popup-closer" href="#" id="popup-closer"></a>
+<div id="popup-content"></div>
+</div>
+</div>
+<script src="resources/qgis2web_expressions.js"></script>
+<script src="resources/proj4.js"></script>
+<script>proj4.defs('EPSG:4326','+proj=longlat +datum=WGS84 +no_defs');</script>
+<script src="./resources/functions.js"></script>
+<script src="./resources/ol.js"></script>
+<script src="./resources/ol-layerswitcher.js"></script>
+<script src="resources/photon-geocoder-autocomplete.min.js"></script>
+<script src="layers/outsid_naheya_1.js"></script><script src="layers/RingRoad_2.js"></script><script src="layers/Sub_road_3.js"></script><script src="layers/busstop_4.js"></script>
+<script src="styles/outsid_naheya_1_style.js"></script><script src="styles/RingRoad_2_style.js"></script><script src="styles/Sub_road_3_style.js"></script><script src="styles/busstop_4_style.js"></script>
+<script src="./layers/layers.js" type="text/javascript"></script>
+<script src="./resources/Autolinker.min.js"></script>
+<script src="./resources/qgis2web.js"></script>
+</body>
+</html>
